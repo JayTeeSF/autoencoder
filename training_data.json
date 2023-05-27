@@ -1,0 +1,24 @@
+[
+  ["hi", "how", "are", "you"],
+  ["hi", "how", "is", "bob"],
+  ["this", "is", "an", "example"],
+  ["what", "is", "your", "name"],
+  ["how", "old", "are", "you"],
+  ["where", "are", "you", "from"],
+  ["nice", "to", "meet", "you"],
+  ["how", "can", "I", "help"],
+  ["I", "like", "pizza"],
+  ["do", "you", "have", "pets"],
+  ["what", "is", "your", "favorite", "color"],
+  ["where", "is", "the", "nearest", "restaurant"],
+  ["how", "do", "you", "spell", "cat"],
+  ["tell", "me", "a", "joke"],
+  ["what", "is", "the", "weather", "today"],
+  ["who", "won", "the", "game"],
+  ["how", "do", "you", "play", "guitar"],
+  ["can", "you", "sing", "a", "song"],
+  ["where", "can", "I", "find", "a", "bookstore"],
+  ["tell", "me", "about", "yourself"],
+  ["what", "is", "the", "meaning", "of", "life"]
+]
+
