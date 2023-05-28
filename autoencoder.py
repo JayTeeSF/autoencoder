@@ -2,6 +2,8 @@
 import tensorflow as tf
 import argparse
 
+input_dim = 10
+
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Autoencoder Loading and Prediction')
 parser.add_argument('--load', type=str, help='Load a saved model from the specified path')
