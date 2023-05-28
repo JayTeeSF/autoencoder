@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import tensorflow as tf
 import numpy as np
 import json
@@ -44,7 +43,7 @@ tokenizer = None
 
 if args.train:
     # Load training data from a JSON file
-    training_file_path = 'training_data.json'  # Replace with the path to your JSON file
+    training_file_path = 'training_data.json' # Replace with the path to your JSON file
     train_data = load_training_data(training_file_path)
 
     # Preprocess the training data
@@ -54,7 +53,7 @@ if args.train:
     autoencoder.fit(input_data, output_data, epochs=100, batch_size=1)
 
     # Save the trained model
-    model_save_path = 'trained_model.keras'  # Replace with the desired save path
+    model_save_path = 'trained_model.keras' # Replace with the desired save path
     autoencoder.save(model_save_path)
     print('Model saved successfully.')
 
@@ -62,24 +61,21 @@ elif args.load:
     # Load a saved model
     model_path = args.load
     autoencoder = tf.keras.models.load_model(model_path)
-
     print('Model loaded successfully.')
 
-    if args.predict:
-        if tokenizer is None:
-            print('Error: No tokenizer found. Please specify --train to train a model or --load to load a trained model.')
-        else:
-            # Tokenize and pad the input sequence
-            input_sequence = args.predict
-            input_data = tokenizer.texts_to_sequences(input_sequence)
-            input_data = tf.keras.preprocessing.sequence.pad_sequences(input_data, maxlen=input_dim)
+if args.predict:
+    if tokenizer is None:
+        print('Error: No tokenizer found. Please specify --train to train a model or --load to load a trained model.')
+    else:
+        # Tokenize and pad the input sequence
+        input_sequence = args.predict
+        input_data = tokenizer.texts_to_sequences(input_sequence)
+        input_data = tf.keras.preprocessing.sequence.pad_sequences(input_data, maxlen=input_dim)
 
-            # Make predictions using the loaded model
-            output_data = autoencoder.predict(input_data)
-
-            print('Input:', input_data)
-            print('Output:', output_data)
+        # Make predictions using the loaded model
+        output_data = autoencoder.predict(input_data)
+        print('Input:', input_data)
+        print('Output:', output_data)
 
 else:
     print('Please specify either --train to train a model or --load to load a trained model.')
-
